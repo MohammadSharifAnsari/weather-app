@@ -11,7 +11,9 @@ export function Weather(){
 <>
 <Search updateSearchTerm={setSearchTerm}/>
 
-<CityWeather cityName={searchTerm}/>
+{
+searchTerm.length==0?"":<CityWeather cityName={searchTerm}/>
+}
 
 
 </>
