@@ -2,6 +2,7 @@ import axios from "axios";
 import { key } from "../helper/contants.js";
 import { useEffect, useState } from "react";
 import { Bars ,BallTriangle,Puff } from 'react-loading-icons'
+import { Navigate, useNavigate } from "react-router-dom";
 export function CityWeather({cityName}){
 
     const [weather_info,setWeather_info]=useState({
@@ -20,6 +21,7 @@ export function CityWeather({cityName}){
         temp_f:undefined
 
     });
+    const navigate=useNavigate();
     const [isLoading,setIsLoading]=useState(false);
 
 
@@ -48,7 +50,9 @@ setWeather_info({
 setIsLoading(false)
             
         } catch (error) {
+            setIsLoading(false);
             console.log("error in weather-info.jsx",error);
+            navigate('/notfound');
             
         }
 
@@ -68,7 +72,7 @@ getdata();
          <Puff stroke="#2C69A5" strokeOpacity={.125} speed={.75} />
       </div>
       :
-      <div className=" flex flex-col  gap-14 ">
+      <div className=" flex flex-col gap-7 md:gap-14 ">
       
       {/* image at top */}
       <div className=" flex items-center justify-center">
@@ -77,7 +81,7 @@ getdata();
 
       </div>
 {/* location info  */}
-<div className=" flex flex-row gap-5 items-center justify-evenly  ">
+<div className=" flex flex-col md:flex-row gap-5 items-center justify-evenly  ">
 
 <div >
     <h1 className=" text-xl font-semibold">
@@ -103,7 +107,7 @@ getdata();
 </div>
 {/* grid for tempearture pressure diatances and indxes */}
 
-<div className=" grid grid-cols-2  min-h-[70vh]">
+<div className=" grid grid-cols-1 md:grid-cols-2  min-h-[70vh]">
 {/* temp */}
 <div className=" flex flex-col justify-center items-center  gap-3 ">
     <h1 className=" text-5xl font-bold">Temperature</h1>
