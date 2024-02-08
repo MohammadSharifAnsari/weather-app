@@ -2,7 +2,6 @@
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import { Search } from './components/Search.jsx'
 import {Customroutes} from "./Routes/customRoutes.jsx"
 
 function App() {

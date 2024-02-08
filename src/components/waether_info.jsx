@@ -72,7 +72,7 @@ getdata();
          <Puff stroke="#2C69A5" strokeOpacity={.125} speed={.75} />
       </div>
       :
-      <div className=" flex flex-col gap-7 md:gap-14 ">
+      <div className=" flex flex-col gap-7 md:gap-3 ">
       
       {/* image at top */}
       <div className=" flex items-center justify-center">
@@ -107,7 +107,7 @@ getdata();
 </div>
 {/* grid for tempearture pressure diatances and indxes */}
 
-<div className=" grid grid-cols-1 md:grid-cols-2  min-h-[70vh]">
+<div className=" grid grid-cols-1 md:grid-cols-2 mb-4 min-h-[70vh]">
 {/* temp */}
 <div className=" flex flex-col justify-center items-center  gap-3 ">
     <h1 className=" text-5xl font-bold">Temperature</h1>
