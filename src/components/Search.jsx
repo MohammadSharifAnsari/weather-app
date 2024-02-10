@@ -15,11 +15,11 @@ export function Search({updateSearchTerm,isDisable}){
     return(
         <>
         <div className=" flex flex-col  items-center justify-center space-y-4 mx-4 pt-4  ">
-        <Link to={'/'} className=" link  ">
-<h1 className=" text-center text-3xl font-bold tracking-wider text-[#2C69A5] ">
+        
+<h1 className=" text-center text-3xl font-bold tracking-wider text-[#2C69A5]  ">
     WEATHER-APP
 </h1>
-        </Link>
+      
 <input disabled={x} type="text" placeholder="Enter city name" className=" w-full text-center bg-transparent   h-10  input input-bordered border-2 border-black " onChange={debounce} />
         </div>
 

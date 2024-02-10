@@ -3,8 +3,9 @@ import { key } from "../helper/contants.js";
 import { useEffect, useState } from "react";
 import { Bars ,BallTriangle,Puff } from 'react-loading-icons'
 import { Navigate, useNavigate } from "react-router-dom";
-export function CityWeather({cityName}){
 
+export function CityWeather({cityName}){
+    
     const [weather_info,setWeather_info]=useState({
         country:"",
         lat:undefined,
@@ -19,10 +20,10 @@ export function CityWeather({cityName}){
         last_updated:"",
         temp_c:undefined,
         temp_f:undefined
-
+        
     });
-    const navigate=useNavigate();
     const [isLoading,setIsLoading]=useState(false);
+    const navigate=useNavigate();
 
 
     async function getdata(){
@@ -42,7 +43,7 @@ setWeather_info({
     pressure_in:res?.data?.current?.pressure_in,
     icon:res?.data?.current?.condition?.icon,
     cloud:res?.data?.current?.cloud,
-    humadity:res?.data?.current?.humadity,
+    humadity:res?.data?.current?.humidity,
     last_updated:res?.data?.current?.last_updated,
     temp_c:res?.data?.current?.temp_c,
     temp_f:res?.data?.current?.temp_f
@@ -122,7 +123,7 @@ getdata();
 </div>
 {/* distances */}
 <div className=" flex flex-col justify-center items-center  gap-3 ">
-    <h1 className=" text-5xl font-bold">Distances</h1>
+    <h1 className=" text-5xl font-bold">Angles</h1>
     <h1 className=" text-xl font-semibold"> <span className=" text-[#2C69A5] text-2xl font-bold">Longitude</span>: {weather_info?.lon} </h1>
     <h1 className=" text-xl font-semibold"> <span className=" text-[#2C69A5] text-2xl font-bold">Latitude </span>: {weather_info?.lat} </h1>
 </div>
